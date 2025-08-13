@@ -4,6 +4,7 @@ use std::io::Cursor;
 use wasm_bindgen::prelude::*;
 
 // Functions used in the client code
+// These functions are designed to be called from JavaScript
 
 #[wasm_bindgen]
 pub fn to_grayscale(image: &[u8]) -> Result<Vec<u8>, JsValue> {
@@ -182,3 +183,4 @@ pub fn median_blur(image: &[u8], kernel_radius: u32) -> Result<Vec<u8>, JsValue>
 fn generate_error_message(err: ImageError) -> JsValue {
     JsValue::from_str(&format!("Image processing error: {}", err))
 }
+
